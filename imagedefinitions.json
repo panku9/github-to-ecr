@@ -1,0 +1,7 @@
+[
+    {
+        "name": "my-ecs-service",
+        "imageUri": "318709527952.dkr.ecr.us-east-1.amazonaws.com/my-ecs-repo:latest"
+    }
+]
+
