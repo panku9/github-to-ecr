@@ -46,3 +46,15 @@ jobs:
           S3_BUCKET="frontends2"
           aws s3 sync build/ "s3://$S3_BUCKET"
 
+      - name: Add public IP to AWS security group for Web App
+        uses: sohelamin/aws-security-group-add-ip-action@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'
+          aws-security-group-id: 'sgr-0a4cb99500a87e28b'
+          port: '22'
+          to-port: '22'
+          protocol: 'tcp'
+          description: 'GitHub Action'
+
