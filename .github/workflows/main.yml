@@ -57,4 +57,3 @@ jobs:
           to-port: '22'
           protocol: 'tcp'
           description: 'GitHub Action'
-
